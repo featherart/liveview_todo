@@ -1,0 +1,32 @@
+<h1>Show Item</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, TodoWeb.ItemLive.FormComponent,
+    id: @item.id,
+    title: @page_title,
+    action: @live_action,
+    item: @item,
+    return_to: Routes.item_show_path(@socket, :show, @item) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @item.description %>
+  </li>
+
+  <li>
+    <strong>Priority:</strong>
+    <%= @item.priority %>
+  </li>
+
+  <li>
+    <strong>Is done:</strong>
+    <%= @item.is_done %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.item_show_path(@socket, :edit, @item), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.item_index_path(@socket, :index) %></span>

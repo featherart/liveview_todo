@@ -1,0 +1,22 @@
+<h2><%= @title %></h2>
+
+<%= f = form_for @changeset, "#",
+  id: "item-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+
+  <%= label f, :description %>
+  <%= text_input f, :description %>
+  <%= error_tag f, :description %>
+
+  <%= label f, :priority %>
+  <%= text_input f, :priority %>
+  <%= error_tag f, :priority %>
+
+  <%= label f, :is_done %>
+  <%= checkbox f, :is_done %>
+  <%= error_tag f, :is_done %>
+
+  <%= submit "Save", phx_disable_with: "Saving..." %>
+</form>
