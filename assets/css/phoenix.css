@@ -32,12 +32,13 @@ select {
 .phx-hero {
   text-align: center;
   border-bottom: 1px solid #e3e3e3;
-  background: #eee;
-  border-radius: 6px;
+  background-color: rgba(11, 10, 77, 0.8);
+  border-radius: 3px;
   padding: 3em 3em 1em;
   margin-bottom: 3rem;
   font-weight: 200;
   font-size: 120%;
+  color: #eee;
 }
 .phx-hero input {
   background: #ffffff;

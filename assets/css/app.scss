@@ -94,6 +94,29 @@
   margin: -1rem 0 2rem;
 }
 
+.edit:before {
+  content: "✎";
+  font-size: 24px;
+  cursor: pointer;
+  color: rgb(85, 26, 100);
+  margin-right: 10px;
+}
+
+.delete:before {
+  content: "\2715";
+  font-size: 24px;
+  color: rgb(185, 11, 11);
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(229, 229, 238, 0.4);
+}
+
+tr:hover {
+  background-color: rgba(233, 210, 214, 0.4);
+}
+
 .pill-component-container {
   display: inline-block;
   border-radius: 25px;
@@ -147,26 +170,5 @@
 
   &.error {
     background-color: red;
-  }
-
-  &.white,
-  &.white-teal,
-  &.white-pink {
-    background-color: white;
-  }
-
-  &.white {
-    border: 1px solid gray;
-    color: gray;
-  }
-
-  &.white-teal {
-    border: 1px solid teal;
-    color: teal;
-  }
-
-  &.white-pink {
-    border: 1px solid pink;
-    color: pink;
   }
 }
