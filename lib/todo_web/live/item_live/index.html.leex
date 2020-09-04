@@ -24,10 +24,13 @@
       <tr id="item-<%= item.id %>">
         <td><%= item.description %></td>
         <td><%= item.priority %></td>
-        <td><%= item.is_done %></td>
+        <%= if item.is_done == true do %>
+        <td><%= live_component @socket, TodoWeb.PillComponent, type: "confirm", content: "done" %></td>
+        <% else %>
+        <td><%= live_component @socket, TodoWeb.PillComponent, type: "warning", content: "not done" %></td>
+        <% end %>
 
         <td>
-          <span><%= live_redirect "Show", to: Routes.item_show_path(@socket, :show, item) %></span>
           <span><%= live_patch "Edit", to: Routes.item_index_path(@socket, :edit, item) %></span>
           <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: item.id, data: [confirm: "Are you sure?"] %></span>
         </td>

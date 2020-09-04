@@ -11,11 +11,11 @@
   <%= error_tag f, :description %>
 
   <%= label f, :priority %>
-  <%= text_input f, :priority %>
+  <%= select f, :priority, ["low", "medium", "high"] %>
   <%= error_tag f, :priority %>
 
   <%= label f, :is_done %>
-  <%= checkbox f, :is_done %>
+  <span><%= checkbox f, :is_done %></span>
   <%= error_tag f, :is_done %>
 
   <%= submit "Save", phx_disable_with: "Saving..." %>
