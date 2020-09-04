@@ -14,9 +14,7 @@
     <tr>
       <th>Description</th>
       <th>Priority</th>
-      <th>Is done</th>
-
-      <th></th>
+      <th colspan="2">Done?</th>
     </tr>
   </thead>
   <tbody id="items">
@@ -25,14 +23,14 @@
         <td><%= item.description %></td>
         <td><%= item.priority %></td>
         <%= if item.is_done == true do %>
-        <td><%= live_component @socket, TodoWeb.PillComponent, type: "confirm", content: "done" %></td>
+        <td><%= live_component @socket, TodoWeb.PillComponent, type: "confirm", content: "yes" %></td>
         <% else %>
-        <td><%= live_component @socket, TodoWeb.PillComponent, type: "warning", content: "not done" %></td>
+        <td><%= live_component @socket, TodoWeb.PillComponent, type: "warning", content: "no" %></td>
         <% end %>
 
         <td>
-          <span><%= live_patch "Edit", to: Routes.item_index_path(@socket, :edit, item) %></span>
-          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: item.id, data: [confirm: "Are you sure?"] %></span>
+          <span class="edit"><%= live_patch "", to: Routes.item_index_path(@socket, :edit, item) %></span>
+          <span class="delete"><%= link "", to: "#", phx_click: "delete", phx_value_id: item.id, data: [confirm: "Are you sure?"] %></span>
         </td>
       </tr>
     <% end %>

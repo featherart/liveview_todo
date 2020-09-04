@@ -21,13 +21,10 @@ defmodule TodoWeb.PillComponent do
 
   * `default` - teal
   * `active` - green
-  * `confirm` - pink
+  * `confirm` - green
   * `disabled` - grey
   * `warning` - yellow
   * `error` - red
-  * `neutral` - white with grey border
-  * `neutral-pink` - white with pink border
-  * `neutral-teal` - white with teal border
 
   ## Examples
 
