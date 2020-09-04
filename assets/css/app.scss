@@ -39,6 +39,10 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+
+  button {
+    display: block;
+  }
 }
 
 .phx-modal-close {
@@ -88,4 +92,81 @@
   color: #a94442;
   display: block;
   margin: -1rem 0 2rem;
+}
+
+.pill-component-container {
+  display: inline-block;
+  border-radius: 25px;
+  padding: 4px 10px;
+  margin: 10px 0;
+  width: max-content;
+  background: teal;
+
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+
+  .dot:before {
+    content: "\2B24";
+    margin-right: 5px;
+    font-size: 5px;
+    display: flex;
+  }
+
+  .ex:before {
+    content: "\2715";
+    color: gray;
+    margin-left: 5px;
+    font-size: 13px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+  }
+
+  &.confirm {
+    background-color: rgb(93, 223, 67);
+  }
+
+  &.active {
+    background-color: yellowgreen;
+  }
+
+  &.disabled {
+    background-color: gray;
+  }
+
+  &.warning {
+    background-color: rgb(255, 187, 0);
+    color: black;
+  }
+
+  &.error {
+    background-color: red;
+  }
+
+  &.white,
+  &.white-teal,
+  &.white-pink {
+    background-color: white;
+  }
+
+  &.white {
+    border: 1px solid gray;
+    color: gray;
+  }
+
+  &.white-teal {
+    border: 1px solid teal;
+    color: teal;
+  }
+
+  &.white-pink {
+    border: 1px solid pink;
+    color: pink;
+  }
 }
